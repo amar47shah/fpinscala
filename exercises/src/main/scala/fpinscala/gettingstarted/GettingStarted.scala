@@ -1,5 +1,7 @@
 package fpinscala.gettingstarted
 
+import fpinscala.datastructures.List
+
 // A comment!
 /* Another comment */
 /** A documentation comment */
@@ -13,8 +15,10 @@ object MyModule {
     msg.format(x, abs(x))
   }
 
-  def main(args: Array[String]): Unit =
-    println(formatAbs(-42))
+  def main(args: Array[String]): Unit = {
+    def add(x:Int, y: Int): Int = x + y
+    println(List.foldLeft(List(1,2,3), 0)(add))
+  }
 
   // A definition of factorial, using a local, tail recursive function
   def factorial(n: Int): Int = {
